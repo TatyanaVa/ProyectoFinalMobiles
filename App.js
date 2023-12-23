@@ -1,20 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {View,Text,StyleSheet,Image} from 'react-native';
+import Products from './src/component/Products/productos';
+import ModalComponent from './src/component/ModalComponent/ModalComponent';
+import { DataProvider } from './src/component/Context/DataContext';
 
-export default function App() {
-  return (
+export default function App(){
+  return(
+    <DataProvider>
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      
+      <StatusBar style='auto'/>
+      <Products/>
+      <ModalComponent/>
     </View>
+    </DataProvider>
+    
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const styles=StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:"center",
+    justifyContent:"center",
   },
 });
